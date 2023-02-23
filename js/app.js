@@ -100,7 +100,6 @@ function randomCustomerNum(min, max) {
 
 // multplies the (random) number of customers with the average # of customers per hour
 function multiply(customerNum, avgCookiesPerCustomer) {
-  console.log(customerNum, avgCookiesPerCustomer); // delete later
   let cookiesSold = customerNum * avgCookiesPerCustomer;
   return Math.ceil(cookiesSold);
 }
@@ -152,7 +151,6 @@ function displayHours(location) {
 function calculateCookies(hours, customersPerHour, avgCookiesPerCustomer) {
   let cookiesSoldPerHour = [];
   let totalCookies = 0;
-  console.log('hours: ' + hours.length); // delete later
   for (let i = 0; i < hours.length; i++) {
     let cookiesEachHour = multiply(customersPerHour[i], avgCookiesPerCustomer);
     totalCookies += cookiesEachHour; // calculates the total number of cookies sold each hr
