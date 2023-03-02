@@ -1,33 +1,120 @@
 h1,
 h2 {
   font-family: 'Tilt Warp', cursive, sans-serif;
-  text-align: center;
+  /* text-align: center; */
 }
 
 nav {
   background-color: #d0aad9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+nav img {
+  width: 15%;
+  padding: 10px 20px;
+  margin-right: 20px;
+  border: 5px dotted #f4a5ae;
+  /* does this cancel out img-fluid? */
+}
+
+/* .nav-format {
+  display: flex;
+  justify-content: space-between;
+} */
 
 nav ul {
   display: flex;
-  justify-content: center;
-}
-
-nav li {
-  padding: 15px 20px;
+  padding: 0 30px;
 }
 
 a {
   color: black;
   font-weight: 700;
   text-decoration: none;
+  padding: 0 30px;
 }
 
-img {
+/* main img {
   width: 40%;
   margin: 20px auto;
   display: block;
+} */
+
+section {
+  margin-bottom: 60px;
 }
+
+.hero-image {
+  background-image: linear-gradient(rgba(58,0,84,0.72), rgba(58,0,84,0.72)), url("/img/family.jpg");
+  background-color: rgba(58,0,84,0.72);
+  background-size: cover;
+  background-position: center 27%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 200px 0;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+  font-family: 'Tilt Warp', cursive, sans-serif;;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  /* margin-bottom: 15px; */
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+}
+
+.locations {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.locations img {
+  width: 40%;
+}
+
+.locations h2 {
+  font-size: 1.5rem;
+}
+
+.locations article {
+  display: block;
+  background-color: #f4a5ae;
+  border: 5px solid black;
+  height:auto;
+  margin: 0 20px;
+  padding: 20px;
+}
+
+.locations li {
+  margin: 10px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+span {
+  font-weight: 600;
+}
+
+.hours {
+  text-align: center;
+}
+
+/* SALES page */
 
 article {
   display: flex;
@@ -59,9 +146,13 @@ body {
 
 h1 {
 	font-size: 30px;
-  padding: 20px;
+  /* padding: 20px; */
 	font-weight: normal;
-  color: #f5d7e3;
+  /* color: #f5d7e3; */
+}
+
+h2 {
+  margin-bottom: 15px;
 }
 
 /* h2 {
@@ -76,5 +167,5 @@ h1 {
 
 p {
 	margin: 0 0 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
