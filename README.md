@@ -10,6 +10,8 @@ This site calculates and displays the amount of cookies different locations sell
 
 [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
+[Sticky footer resource](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/)
+
 ### Lighthouse Access
 
 ![Lighthouse accessibility score](/img/lighthouse.jpg)

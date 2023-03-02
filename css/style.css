@@ -1,10 +1,32 @@
-h1,
-h2 {
+body {
+	font-family: Helvetica, sans-serif;
+  background-color: #3b429f;
+}
+
+h1, h2 {
   font-family: 'Tilt Warp', cursive, sans-serif;
   /* text-align: center; */
 }
 
-nav {
+h1 {
+	font-size: 30px;
+  /* padding: 20px; */
+	/* font-weight: normal; */
+  /* color: #f5d7e3; */
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+p {
+	margin: 0 0 10px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav, footer {
   background-color: #d0aad9;
   display: flex;
   justify-content: space-between;
@@ -22,17 +44,32 @@ nav img {
   padding: 10px 20px;
   margin-right: 20px;
   border: 5px dotted #f4a5ae;
-  /* does this cancel out img-fluid? */
 }
-
-/* .nav-format {
-  display: flex;
-  justify-content: space-between;
-} */
 
 nav ul {
   display: flex;
   padding: 0 30px;
+}
+
+/* Make the screen still readable for small screens */
+@media screen and (max-width: 640px) {
+  nav, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav ul {
+    display: block;
+    padding: 20px 10px;
+    margin: auto auto;
+  }
 }
 
 a {
@@ -42,22 +79,28 @@ a {
   padding: 0 30px;
 }
 
-/* main img {
-  width: 40%;
-  margin: 20px auto;
-  display: block;
-} */
+main {
+  background-color: white;
+}
+
+.home {
+  padding-bottom: 10px;
+}
 
 section {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+}
+.hero-image,
+.stay-connected {
+  background-color: rgba(58,0,84,0.72);
 }
 
 .hero-image {
   background-image: linear-gradient(rgba(58,0,84,0.72), rgba(58,0,84,0.72)), url("/img/family.jpg");
-  background-color: rgba(58,0,84,0.72);
   background-size: cover;
   background-position: center 27%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
   padding: 200px 0;
 }
@@ -65,7 +108,7 @@ section {
 .hero-text {
   text-align: center;
   color: white;
-  font-family: 'Tilt Warp', cursive, sans-serif;;
+  font-family: 'Tilt Warp', cursive, sans-serif;
 }
 
 .hero-text h2 {
@@ -81,22 +124,28 @@ section {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-wrap: wrap;
 }
 
 .locations img {
-  width: 40%;
+  width: 30%;
+  margin: 10px;
+  /* border: 1px solid black; */
 }
 
 .locations h2 {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  text-align: center;
 }
 
 .locations article {
   display: block;
-  background-color: #f4a5ae;
-  border: 5px solid black;
+  background-color: #d0aad9;
+  border: 2px solid black;
   height:auto;
-  margin: 0 20px;
+  margin: 10px;
   padding: 20px;
 }
 
@@ -112,60 +161,101 @@ span {
 
 .hours {
   text-align: center;
+  /* color: #f5d7e3; */
+}
+
+.pictures {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.pictures img {
+  border: 2px solid black;
+  margin: 20px 20px;
+}
+
+.stay-connected {
+  background-image: linear-gradient(rgba(58,0,84,0.72), rgba(58,0,84,0.72)), url("/img/chinook.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.input {
+  background-color: rgba(244, 165, 174, 0.8);
+  width: fit-content;
+  margin: auto auto;
+  padding: 20px;
+}
+
+.input input {
+  display: block;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.input .btn {
+  background-color: #3b429f;
+  color: white;
+}
+
+footer nav li {
+  padding: 0 30px;
 }
 
 /* SALES page */
 
-article {
+/* Makes sticky footer. Code from: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+.wrapper {
   display: flex;
-  justify-content: center;
-  margin: 40px 20px;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-table, th, td {
- border: 2px solid black;
- background-color: #f4a5ae;
+.sales {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
 }
 
-th, td {
-  padding: 10px;
+.sales article {
+  margin: 30px;
 }
 
-th {
-  font-weight: 700;
+.sales img {
+  width: 40%;
+  margin: auto auto;
+  padding: 40px;
+  display: block;
+}
+
+.sales div {
+  overflow-x: auto; /* Makes the table responsive */
+  padding: 20px;
+}
+
+table {
+  margin: auto auto;
+  background-color: #f4a5ae;
+  border: 5px solid black;
+}
+
+/* th, td {
+  border: 0.5px solid black;
+} */
+
+th,
+tbody td:first-of-type {
+  /* background-color: #d0aad9; */
+  font-weight: bold;
 }
 
 td {
   text-transform: capitalize;
-}
-
-body {
-	font-family: Helvetica, sans-serif;
-  background-color: #3b429f;
-}
-
-h1 {
-	font-size: 30px;
-  /* padding: 20px; */
-	font-weight: normal;
-  /* color: #f5d7e3; */
-}
-
-h2 {
-  margin-bottom: 15px;
-}
-
-/* h2 {
-	font-size: 18px;
-	margin: 12px 12px;
-	font-weight: normal;
-  color: black;
-  padding: 10px;
-  background-color: #f4a5ae;
-  border-radius: 10px;
-} */
-
-p {
-	margin: 0 0 10px;
-  /* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
