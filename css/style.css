@@ -111,7 +111,7 @@ section {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("/img/family.jpg");
+  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("../img/family.jpg");
   background-size: cover;
   background-position: center 27%;
   background-repeat: no-repeat;
@@ -187,7 +187,7 @@ span {
 }
 
 .stay-connected {
-  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("/img/chinook.jpg");
+  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("../img/chinook.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: repeat;
