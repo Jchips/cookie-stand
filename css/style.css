@@ -1,17 +1,18 @@
 body {
-	font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   background-color: #3b429f;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Tilt Warp', cursive, sans-serif;
   /* text-align: center; */
 }
 
 h1 {
-	font-size: 30px;
+  font-size: 30px;
   /* padding: 20px; */
-	/* font-weight: normal; */
+  /* font-weight: normal; */
   /* color: #f5d7e3; */
 }
 
@@ -21,12 +22,13 @@ h2 {
 }
 
 p {
-	margin: 0 0 10px;
+  margin: 0 0 10px;
   font-size: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-nav, footer {
+nav,
+footer {
   background-color: #d0aad9;
   display: flex;
   justify-content: space-between;
@@ -53,7 +55,9 @@ nav ul {
 
 /* Make the screen still readable for small screens */
 @media screen and (max-width: 640px) {
-  nav, footer {
+
+  nav,
+  footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,13 +94,14 @@ main {
 section {
   margin-bottom: 50px;
 }
+
 .hero-image,
 .stay-connected {
-  background-color: rgba(58,0,84,0.72);
+  background-color: rgba(58, 0, 84, 0.72);
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(58,0,84,0.72), rgba(58,0,84,0.72)), url("/img/family.jpg");
+  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("/img/family.jpg");
   background-size: cover;
   background-position: center 27%;
   background-repeat: no-repeat;
@@ -144,7 +149,7 @@ section {
   display: block;
   background-color: #d0aad9;
   border: 2px solid black;
-  height:auto;
+  height: auto;
   margin: 10px;
   padding: 20px;
 }
@@ -178,7 +183,7 @@ span {
 }
 
 .stay-connected {
-  background-image: linear-gradient(rgba(58,0,84,0.72), rgba(58,0,84,0.72)), url("/img/chinook.jpg");
+  background-image: linear-gradient(rgba(58, 0, 84, 0.72), rgba(58, 0, 84, 0.72)), url("/img/chinook.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: repeat;
@@ -236,7 +241,8 @@ footer nav li {
 }
 
 .sales div {
-  overflow-x: auto; /* Makes the table responsive */
+  overflow-x: auto;
+  /* Makes the table responsive */
   padding: 20px;
 }
 
