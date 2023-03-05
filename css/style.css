@@ -202,17 +202,26 @@ span {
   padding: 20px;
 }
 
-.input input {
-  display: block;
-  margin: 5px auto;
+input {
   padding: 5px;
   border-radius: 2px;
 }
 
-.input .btn {
+.input input {
+  display: block;
+  margin: 5px auto;
+  /* padding: 5px;
+  border-radius: 2px; */
+}
+
+.btn {
   background-color: #3b429f;
   color: white;
 }
+
+/* footer nav {
+  padding-right: 0;
+} */
 
 footer nav li {
   padding: 0 30px;
@@ -271,4 +280,39 @@ tbody td:first-of-type {
 
 td {
   text-transform: capitalize;
+}
+
+form {
+  background-color: #3b429f;
+  width: fit-content;
+  margin: auto auto;
+  color: black;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+form * {
+  padding: 5px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  background-color: #d0aad9;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+form .btn {
+  width: fit-content;
+  margin: 10px auto;
+  border: 0px;
 }

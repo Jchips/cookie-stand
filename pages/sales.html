@@ -34,6 +34,29 @@
         <div>
           <table id="table" class="table table-hover"></table>
         </div>
+        <form id="form">
+          <fieldset>
+            <legend><h2>Add new location</h2></legend>
+
+            <label for="location">Location:
+              <input type="text" id="location" name="newLocation" placeholder="Enter store location" required>
+            </label>
+
+            <label for="min-customers">Minimum customers:
+              <input type="number" id="min-customers" name="minCustomers" placeholder="Enter a number" required>
+            </label>
+
+            <label for="max-customers">Maximum customers:
+              <input type="number" id="max-customers" name="maxCustomers" placeholder="Enter a number" required>
+            </label>
+
+            <label for="avg-cookies-per-customer">Average cookies per customer:
+              <input type="text" id="avg-cookies-per-customer" name="avgCookiesPerCustomer" placeholder="Enter a number" required>
+            </label>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+        </form>
       </article>
     </main>
     <footer>

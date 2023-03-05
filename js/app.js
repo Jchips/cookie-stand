@@ -8,7 +8,7 @@ function init() {
   let locations = [];
 
   // location class
-  function Location(name, minCustomers, maxCustomers, avgCookiesPerCustomer) {
+  function StoreLocation(name, minCustomers, maxCustomers, avgCookiesPerCustomer) {
     this.name = name;
     this.minCustomers = minCustomers;
     this.maxCustomers = maxCustomers;
@@ -21,20 +21,20 @@ function init() {
   }
 
   // method to get an array of random customers per hour
-  Location.prototype.getCustomersPerHour = function() {
+  StoreLocation.prototype.getCustomersPerHour = function () {
     let randomCustomersArray = customersPerHour(hours, this.minCustomers, this.maxCustomers);
     this.randomCustomersArray = randomCustomersArray;
   };
 
   // method to calcuate how many cookies are sold each hour and total amount of cookies sold that day
-  Location.prototype.calculateCookiesPerHour = function() {
+  StoreLocation.prototype.calculateCookiesPerHour = function () {
     let array = calculateCookies(hours, this.randomCustomersArray, this.avgCookiesPerCustomer);
-    this.cookiesPerHour = array[0];
-    this.totalCookies = array[1];
+    this.cookiesPerHour = array[0]; // returns array of cookies sold each hour
+    this.totalCookies = array[1]; // returns the total cookies number for the location
   };
 
   // method to upload location row to the table
-  Location.prototype.render = function() {
+  StoreLocation.prototype.render = function () {
     let table = document.getElementById('table');
     let tbody = document.createElement('tbody');
     table.appendChild(tbody);
@@ -56,18 +56,45 @@ function init() {
     row.appendChild(total);
   };
 
-  let seattle = new Location('seattle', 23, 65, 6.3);
-  let tokyo = new Location('tokyo', 3, 24, 1.2);
-  let dubai = new Location('dubai', 11, 38, 3.7);
-  let paris = new Location('paris', 20, 38, 2.3);
-  let lima = new Location('lima', 2, 16, 4.6);
+  let seattle = new StoreLocation('seattle', 23, 65, 6.3);
+  let tokyo = new StoreLocation('tokyo', 3, 24, 1.2);
+  let dubai = new StoreLocation('dubai', 11, 38, 3.7);
+  let paris = new StoreLocation('paris', 20, 38, 2.3);
+  let lima = new StoreLocation('lima', 2, 16, 4.6);
   displayCookiesTable(hours, locations);
+
+  let form = document.getElementById('form');
+
+  // Had to pass parameters so I called handleSubmit inside a function to get event
+  form.addEventListener('submit', function (event) {
+    handleSubmit(event, hours, locations, StoreLocation, form);
+  });
+}
+
+// Updates table with new location data from the user (inputted data) when the user hits the submit button
+// deletes and inserts new table footer with updated totals
+function handleSubmit(event, hours, locations, StoreLocation, form) {
+  event.preventDefault(); // prevents instant refresh
+  let locationName = event.target.newLocation.value;
+  let minCustomers = event.target.minCustomers.value;
+  let maxCustomers = event.target.maxCustomers.value;
+  let avgCookiesPerCustomer = event.target.avgCookiesPerCustomer.value;
+
+  let addedLocation = new StoreLocation(locationName, parseInt(minCustomers), parseInt(maxCustomers), parseFloat(avgCookiesPerCustomer));
+  addedLocation.getCustomersPerHour();
+  addedLocation.render();
+  form.reset(); // empties the form for next location
+
+  let table = document.getElementById('table');
+  let rowsAmount = table.rows.length;
+  table.deleteRow(rowsAmount - 1);
+  tableFooter(hours, locations);
 }
 
 // displays the full cookie data table on the page
 function displayCookiesTable(hours, locations) {
   tableHeader(hours);
-  for(let i = 0; i < locations.length; i++) {
+  for (let i = 0; i < locations.length; i++) {
     locations[i].getCustomersPerHour();
     locations[i].render();
   }
@@ -97,29 +124,30 @@ function tableHeader(hours) {
 // displays the total amount of cookies sold each hour at all locations and the daily total of sold cookies
 function tableFooter(hours, locations) {
   let table = document.getElementById('table');
-  let thead = document.createElement('thead');
-  table.appendChild(thead);
-  let headRow = document.createElement('tr');
-  thead.appendChild(headRow);
+  let tfoot = document.createElement('tfoot');
+  table.appendChild(tfoot);
+  let footRow = document.createElement('tr');
+  tfoot.appendChild(footRow);
   let totals = document.createElement('th');
   totals.textContent = 'Totals';
-  headRow.appendChild(totals);
+  footRow.appendChild(totals);
+  // Calculates the cookies sold per hour total for all locations
   for (let i = 0; i < hours.length; i++) {
     let hoursTotal = 0;
     let dailytotal = document.createElement('th');
     for (let j = 0; j < locations.length; j++) {
-      hoursTotal += locations[j].cookiesPerHour[i];
+      hoursTotal += locations[j].cookiesPerHour[i]; // adds each location's cookies total for each hour
     }
     dailytotal.textContent = hoursTotal;
-    headRow.appendChild(dailytotal);
+    footRow.appendChild(dailytotal);
   }
   let allLocationsTotal = document.createElement('th');
   let cookiesTotal = 0;
   for (let i = 0; i < locations.length; i++) {
-    cookiesTotal += locations[i].totalCookies;
+    cookiesTotal += locations[i].totalCookies; // adds each location's total cookies amount (for the day) together
   }
   allLocationsTotal.textContent = cookiesTotal;
-  headRow.appendChild(allLocationsTotal);
+  footRow.appendChild(allLocationsTotal);
 }
 
 // calculates random number of customers (in between the min and max)
