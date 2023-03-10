@@ -1,19 +1,16 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif; /* font #1 */
   background-color: #3b429f;
 }
 
 h1,
 h2,
 .hero-text {
-  font-family: 'Tilt Warp', cursive, sans-serif;
+  font-family: 'Tilt Warp', cursive, sans-serif; /* font #2 */
 }
 
 h1 {
   font-size: 30px;
-  /* padding: 20px; */
-  /* font-weight: normal; */
-  /* color: #f5d7e3; */
 }
 
 h2 {
@@ -28,7 +25,13 @@ p {
 
 p,
 .locations li {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* font #3 */
+}
+
+.locations li,
+.hours p,
+.stay-connected p {
+  color: rgba(52, 5, 74, 0.72);
 }
 
 nav,
@@ -46,6 +49,10 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+}
+
+nav a:hover {
+  color: #3b429f;
 }
 
 .title {
@@ -127,7 +134,6 @@ section {
 
 .hero-text h2 {
   font-size: 2rem;
-  /* margin-bottom: 15px; */
 }
 
 .hero-text p {
@@ -210,18 +216,12 @@ input {
 .input input {
   display: block;
   margin: 5px auto;
-  /* padding: 5px;
-  border-radius: 2px; */
 }
 
 .btn {
   background-color: #3b429f;
   color: white;
 }
-
-/* footer nav {
-  padding-right: 0;
-} */
 
 footer nav li {
   padding: 0 30px;
@@ -265,7 +265,11 @@ table {
 
 table {
   background-color: #f4a5ae;
-  border: 5px solid black;
+  border: 5px solid;
+}
+
+.table {
+  color: rgb(70, 70, 70);
 }
 
 /* th, td {
@@ -274,7 +278,6 @@ table {
 
 th,
 tbody td:first-of-type {
-  /* background-color: #d0aad9; */
   font-weight: bold;
 }
 
